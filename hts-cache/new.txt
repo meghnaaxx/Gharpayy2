@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+14:32:17	391654/391654	---MCZ	200	added ('OK')	text/html	etag:W/%22baeb8441a283b20fa76a1c74ed007f76%22	https://melodiusite.vercel.app/mtechpg5.html	/Users/meghnachawla/Gharpayy2/melodiusite.vercel.app/mtechpg5.html	(from )
+14:32:18	1491/1491	---MCZ	404	error ('Not%20Found')	text/html	date:Tue,%2007%20Oct%202025%2009:02:17%20GMT	https://melodiusite.vercel.app/robots.txt		(from )
