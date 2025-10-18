@@ -1501,26 +1501,130 @@
         }
 
         /* WhatsApp Button */
-        .whatsapp-btn {
+        /*.whatsapp-btn {
           display: inline-block;
-          margin-top: 6px;
+          margin-top: 12px;
           padding: 12px 22px;
           background: white;
           color: #000000;
           text-decoration: none;
-          border-radius: 6px;
+          border-radius: 18px;
           font-weight: bold;
           font-size: 14px;
           border: 1px solid black;
-          margin-bottom: 8px;
-          margin-right: 2px;
+          margin-bottom: 12px;
+          margin-right: 12px;
         }
 
         .whatsapp-btn:hover {
           background: var(--overlay-white-color);
           color: black;
           border: 1px solid black;
-        }
+        }*/
+
+         
+       .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 18px; /* Increased vertical padding */
+    background: linear-gradient(145deg, #25D366, #128C7E);
+    color: #ffffff;
+    border: 0.5px solid rgba(37, 211, 102, 0.8);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 12px 12px 12px 0;
+    letter-spacing: 0.3px;
+    box-shadow:
+        0 3px 8px rgba(18, 140, 126, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    backdrop-filter: blur(6px);
+    overflow: hidden;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+/* WhatsApp logo icon */
+.whatsapp-icon {
+    font-size: 16px;
+    color: #ffffff;
+    transition: color 0.4s ease, transform 0.5s ease;
+    z-index: 2;
+}
+
+/* Button text */
+.btn-text {
+    margin-left: 8px;
+    transition: opacity 0.4s ease, transform 0.5s ease;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* Green metallic shine gradient */
+.whatsapp-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(37, 211, 102, 0.7), transparent);
+    pointer-events: none;
+    transition: left 0.7s ease;
+    z-index: 1;
+}
+
+/* Swipe overlay sliding in */
+.whatsapp-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 128, 80, 0.4);
+    transition: left 0.4s ease;
+    z-index: 1;
+}
+
+/* Hover effect */
+.whatsapp-btn:hover::before {
+    left: 100%;
+}
+
+.whatsapp-btn:hover::after {
+    left: 0;
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(145deg, #2edc75, #0f7d64);
+    border-color: rgba(37, 211, 102, 1);
+    box-shadow:
+        0 6px 12px rgba(37, 211, 102, 0.35),
+        0 0 8px rgba(37, 211, 102, 0.4);
+    transform: scale(1.1);
+}
+
+
+/* On hover, hide text and move icon to right with smooth transition */
+.whatsapp-btn:hover .btn-text {
+    opacity: 0;
+    transform: translateX(-20px);
+    pointer-events: none;
+}
+
+.whatsapp-btn:hover .whatsapp-icon {
+    transform: translateX(40px);
+    color: #d0fff0;
+}
+
+.whatsapp-btn:active {
+    transform: scale(1);
+    box-shadow: 0 3px 6px rgba(18, 140, 126, 0.4);
+}
+
+
 
         .cove-card5 {
           background: #f4c024;
@@ -1532,7 +1636,7 @@
           max-width: 300px;
           height: 750px;
           font-family: 'Poppins', sans-serif;
-          border: 1px solid black;
+          /*border: 1px solid black;*/
           transition: box-shadow 0.3s ease, transform 0.3s ease;
           cursor: pointer;
           height: auto !important;
@@ -1541,26 +1645,29 @@
 
         }
 
-        .cove-card6 {
-          background-color: #F0ead6;
-          border-radius: 12px;
-          box-shadow: 6px 6px 0 -2px #000;
-          overflow: hidden;
-          max-width: 300px;
-          height: 750px;
-          font-family: 'Poppins', sans-serif;
-          border: 1px solid black;
-          transition: box-shadow 0.3s ease, transform 0.3s ease;
-          cursor: pointer;
-          height: auto !important;
-          min-height: auto !important;
-          margin: 0 auto;
+        
+ .cove-card6 {
+    background: linear-gradient(to bottom, #f03500e3, #f6cf5a);
+    border-radius: 40px;
+    box-shadow: 12px 12px 10px -3px #c6893e;
+    overflow: hidden;
+    max-width: 300px;
+    height: 750px;
+    font-family: 'Poppins', sans-serif;
+    border: 2.5px solid #dc9033;
+    transition: box-shadow 0.3s 
+ease, transform 0.3s 
+ease;
+    cursor: pointer;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0 auto;
+  }
 
-        }
 
         .cove-card4 {
           background-color: #F0ead6;
-          border-radius: 12px;
+          border-radius: 21px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
           overflow: hidden;
           max-width: 300px;
@@ -1610,7 +1717,7 @@
         .cove-card__image-section {
           position: relative;
           width: 100%;
-          height: 325px;
+          height: 300px;
           /* apne hisaab se set karo */
           overflow: hidden;
         }
@@ -1712,7 +1819,7 @@
           bottom: 0;
           left: 0;
           font-family: "futura-pt", sans-serif;
-          background: linear-gradient(135deg, #FFBF00, #78350F, #FFBF00);
+          background: linear-gradient(160deg, #ff8800a1, #78350fe6, #121008);
           color: white;
           padding: 6px 14px;
           border-radius: 0 12px 0 0;
@@ -1726,26 +1833,61 @@
           transition: background-position 0.5s ease-in-out;
 
         }
+.cove-card__badge3 {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    font-family: "futura-pt", sans-serif;
+    background: linear-gradient(160deg, #ff6f00a1, #c7774a, #000000cc);
+    color: #eeeeee;
+    padding: 6px 14px;
+    border-radius: 0 12px 0 0;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-size: 200% auto;
+    transition: background-position 0.5s 
+ease-in-out;
+}
 
-        .cove-card__badge3 {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          font-family: "futura-pt", sans-serif;
-          background: linear-gradient(135deg, #FFBF00, #78350F, #FFBF00);
-          color: white;
-          padding: 6px 14px;
-          border-radius: 0 12px 0 0;
-          font-size: 12px;
-          font-weight: 700;
-          z-index: 5;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-          overflow: hidden;
-          background-size: 200% auto;
-          transition: background-position 0.5s ease-in-out;
+.cove-card__badge3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 10px solid rgba(255, 191, 0, 0.723); /* Adjust to pick color similar to background gradient */
+}
 
-        }
+
+
+.cove-card__badge31 {
+    position: absolute;
+    bottom: 0.5px;
+    left: 100px;
+    font-family: "futura-pt", sans-serif;
+    background: linear-gradient(122deg, #0a037dbf, #085792d1, #121008);
+    color: #eeeeee;
+    padding: 6px 14px;
+    border-radius: 0 12px 0 0;
+    font-size: 13px; /* slightly smaller to avoid wrapping */
+    font-weight: 600;
+    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-size: 200% auto;
+    transition: background-position 0.5s ease-in-out, transform 0.4s ease;
+    white-space: nowrap; /* prevent text wrap */
+}
+
+
 
 
         .cove-card__badge:hover {
@@ -1754,7 +1896,7 @@
 
         /* --- Navigation Arrows --- */
         .slider-arrow {
-          position: absolute;
+         
           top: 50%;
           transform: translateY(-50%);
           width: 32px;
@@ -1806,10 +1948,11 @@
         }
 
         .location-svg-icon {
-          width: 16px;
-          height: 16px;
-          stroke: #9CA3AF;
-          margin-right: 8px;
+          width: 18px;
+          height: 18px;
+          stroke: #000000;
+          margin-right: 2.5px;
+          margin-left:5px ;
           flex-shrink: 0;
         }
 
@@ -1864,24 +2007,23 @@
         }
 
         .p6-title-container {
-          background-color: black;
-          padding: 4px 4px;
+          /*background-color: black;*/
+          border-radius:17px;
+          padding: 4px 15px;
           display: flex;
           justify-content: start;
+          padding-top: 10px;
         }
 
         /* This applies the gradient ONLY to the text inside */
         .p6-title-text {
-          font-size: 24px;
-          font-weight: 700;
-          font-family: 'Space Grotesk', sans-serif;
-
-          /* --- The Gradient Effect --- */
-          /* background-colo: #FFBF00;
-  background-clip: text;
-  -webkit-background-clip: text; */
-          color: #FFBF00;
+          font-size: 22.5px;
+          font-weight: 900;
+          font-family: math;
+          color: #2e12cdf0;
           background-size: 100%;
+          letter-spacing: -1.5px;
+          font-family: "Futura", "Work Sans", "Helvetica Neue", sans-serif;
         }
 
         .p2-title {
@@ -1962,7 +2104,7 @@
           font-weight: 300;
           color: black;
           margin: 4px 0 2px 0;
-          padding-left: 2px;
+          padding-left: 22px;
 
         }
 
@@ -2221,13 +2363,14 @@
         .btn-box .whatsapp-btn {}
 
         .p-btn {
-          margin-bottom: 2px;
+          margin-bottom: 8px;
+           margin-right: 7px;
           font-weight: 500;
           line-height: 25px;
-          border-radius: 13px;
+          border-radius: 19px;
           font-size: 16px;
-          padding: 7px 20px;
-          border: 2px solid var(--secondery-theme-color);
+          padding: 5px 16px;
+          border: 1px solid var(--secondery-theme-color);
           font-family: var(--theme-body-font);
         }
 
@@ -2801,7 +2944,15 @@
               <div class="slider-arrow slider-arrow--prev">&lt;</div>
               <div class="slider-arrow slider-arrow--next">&gt;</div>
 
-              <span class="cove-card__badge3">Gharpayy</span>
+              <span class="cove-card__badge3">GHARPAYY</span>
+              <span class="cove-card__badge31">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;">
+    <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+  Koramangala/SG Palya
+</span>
+           
             </div>
 
             <div class="cove-card__content-section">
@@ -2827,8 +2978,7 @@
                 <div class="btn-box">
 
                   <a class="whatsapp-btn"
-                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-">Stay
-                    Here</a>
+                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-"> <i class="fa-brands fa-whatsapp whatsapp-icon"></i><span class="btn-text">STAY HERE</span></a>
                 </div>
               </div>
 </div>
@@ -2853,7 +3003,14 @@
               <div class="slider-arrow slider-arrow--prev">&lt;</div>
               <div class="slider-arrow slider-arrow--next">&gt;</div>
 
-              <span class="cove-card__badge3">Gharpayy</span>
+              <span class="cove-card__badge3">GHARPAYY</span>
+               <span class="cove-card__badge31">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;">
+    <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+  Koramangala/SG Palya
+</span>
             </div>
 
             <div class="cove-card__content-section">
@@ -2879,8 +3036,7 @@
                 <div class="btn-box">
 
                   <a class="whatsapp-btn"
-                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-">Stay
-                    Here</a>
+                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-"> <i class="fa-brands fa-whatsapp whatsapp-icon"></i> <span class="btn-text">STAY HERE</span></a>
                 </div>
               </div>
 </div>
@@ -2910,7 +3066,14 @@
               <div class="slider-arrow slider-arrow--prev">&lt;</div>
               <div class="slider-arrow slider-arrow--next">&gt;</div>
 
-              <span class="cove-card__badge3">Gharpayy</span>
+              <span class="cove-card__badge3">GHARPAYY</span>
+                <span class="cove-card__badge31">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;">
+    <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+  Koramangala/SG Palya
+</span>
             </div>
 
             <div class="cove-card__content-section">
@@ -2936,8 +3099,7 @@
                 <div class="btn-box">
 
                   <a class="whatsapp-btn"
-                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-">Stay
-                    Here</a>
+                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-"> <i class="fa-brands fa-whatsapp whatsapp-icon"></i><span class="btn-text">STAY HERE</span></a>
                 </div>
               </div>
 </div>
@@ -2965,7 +3127,14 @@
               <div class="slider-arrow slider-arrow--prev">&lt;</div>
               <div class="slider-arrow slider-arrow--next">&gt;</div>
 
-              <span class="cove-card__badge3">Gharpayy</span>
+              <span class="cove-card__badge3">GHARPAYY</span>
+                <span class="cove-card__badge31">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;">
+    <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+  Koramangala/SG Palya
+</span>
             </div>
 
             <div class="cove-card__content-section">
@@ -2991,8 +3160,7 @@
                 <div class="btn-box">
 
                   <a class="whatsapp-btn"
-                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-">Stay
-                    Here</a>
+                    href="https://api.whatsapp.com/send?phone=+917988114576&amp;text=Heyy!%20GHARPAYY,%20I%20am%20looking%20for%20a%20GOOD-ACCOMODATION%20in%20the%20AREA%20NEARBY-"> <i class="fa-brands fa-whatsapp whatsapp-icon"></i><span class="btn-text">STAY HERE</span></a>
                 </div>
               </div>
 </div>
